@@ -4,7 +4,7 @@
   vars:
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-07f11ddc145b54bd8
-    zone_id: "Z07796551BVY32FNM4MO7"
+    zone_id: Z07796551BVY32FNM4MO7
     domain_name: "daws86s.cyou"
     instances:
     - mongodb
