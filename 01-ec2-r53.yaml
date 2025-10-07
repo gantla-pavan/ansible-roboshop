@@ -24,6 +24,8 @@
     ansible.builtin.debug:
     msg: "{{ ec2_output }}"
 
-
     
+
+
+
     
