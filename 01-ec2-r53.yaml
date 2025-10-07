@@ -6,7 +6,7 @@
     sgi_id: sg-07f11ddc145b54bd8
     zone_id: "Z07796551BVY32FNM4MO7"
     domain_name: "daws86s.cyou"
-    instance:
+    instances:
     - mongodb
   tasks:
   - name: create ec2 instance
