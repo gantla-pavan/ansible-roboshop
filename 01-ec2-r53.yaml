@@ -15,7 +15,7 @@
       amazon.aws.ec2_instance:
         name: "{{ item }}"
         instance_type: t3.micro
-        security_group_id: "{{ sg_id }}"   # ✅ Fixed key
+        security_group: "{{ sg_id }}"   # ✅ Fixed key
         image_id: "{{ ami_id }}"
         tags:
           Name: "{{ item }}"
