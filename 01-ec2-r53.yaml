@@ -15,7 +15,7 @@
       amazon.aws.ec2_instance:
         name: "{{ item }}"
         instance_type: t3.micro
-        security_group: "{{ sg_id }}"
+        security_group_id: "{{ sg_id }}"   # ✅ Fixed key
         image_id: "{{ ami_id }}"
         tags:
           Name: "{{ item }}"
@@ -36,7 +36,7 @@
         msg: "{{ item.instances[0].private_ip_address }}"
       loop: "{{ ec2_output.results }}"
 
-    - name: create route53 record
+    - name: create Route53 record
       amazon.aws.route53_record:
         zone_id: "{{ zone_id }}"
         record_name: "{{ item.item }}.{{ domain_name }}"
@@ -45,4 +45,3 @@
         value: "{{ item.instances[0].private_ip_address }}"
         state: present
       loop: "{{ ec2_output.results }}"
-
