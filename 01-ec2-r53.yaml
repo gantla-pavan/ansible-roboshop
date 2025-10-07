@@ -23,3 +23,12 @@
   - name: print the ec2_output
     ansible.builtin.debug:
      msg: "{{ ec2_output }}"
+
+  - name: print public_ip
+    ansible.builtin.debug: "{{ item.instances[0].public_ip_adress }}"
+    loop: "{{ ec2_output.result }}"
+
+
+- name: print private_ip
+  ansible.builtin.debug: "{{ item.instances[0].private_ip_adress }}"
+  loop: "{{ ec2_output.result }}"
