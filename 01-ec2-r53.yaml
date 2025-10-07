@@ -76,10 +76,10 @@
 
     - name: create Route53 record
       amazon.aws.route53:
-      zone: "{{ domain_name }}"
-      record: "{{ item.item }}. {{ domain_name }}"
-      type: A
-      ttl: 1
-      value: "{{ item.instances[0].private_ip_address }}"
-      overwrite: true
-      loop: "{{ ec2_output.results }}"
+       zone: "{{ domain_name }}"
+       record: "{{ item.item }}. {{ domain_name }}"
+       type: A
+       ttl: 1
+       value: "{{ item.instances[0].private_ip_address }}"
+       overwrite: true
+       loop: "{{ ec2_output.results }}"
