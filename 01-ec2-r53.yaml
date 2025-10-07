@@ -9,6 +9,7 @@
     domain_name: "daws86s.cyou"
     instances:
       - mongodb
+      - redis
 
   tasks:
     - name: create ec2 instance
