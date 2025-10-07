@@ -41,7 +41,7 @@
         zone_id: "{{ zone_id }}"
         record_name: "{{ item.item }}.{{ domain_name }}"
         type: A
-        ttl: 60
+        ttl: 1
         value: "{{ item.instances[0].private_ip_address }}"
-        state: present
+        overwrite: true
       loop: "{{ ec2_output.results }}"
