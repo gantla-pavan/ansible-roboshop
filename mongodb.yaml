@@ -1,28 +1,51 @@
-- name: setup mongodb server
-  hosts: mongodb
-  become: yes
-  tasks:
-  - name: copy mongodb repo
-    ansible.builtin.copy:
-      src: mongo.repo
-      dest: /etc/yum.repos.d/mongo.repo
+# - name: setup mongodb server
+#   hosts: mongodb
+#   become: yes
+#   tasks:
+#   - name: copy mongodb repo
+#     ansible.builtin.copy:
+#       src: mongo.repo
+#       dest: /etc/yum.repos.d/mongo.repo
 
 
-  - name: install mongodb server
-    ansible.builtin.package:
-     name: mongodb-org
-     state: present
+#   - name: install mongodb server
+#     ansible.builtin.package:
+#      name: mongodb-org
+#      state: present
 
-  - name: allow remote connections
-    ansible.builtin.replace:
-     path: /etc/mongodb.conf
-     regexp: '127.0.0.1'
-     replace: '0.0.0.0'
+#   - name: allow remote connections
+#     ansible.builtin.replace:
+#      path: /etc/mongodb.conf
+#      regexp: '127.0.0.1'
+#      replace: '0.0.0.0'
 
-  - name: start and enable service
-    ansible.builtin.service:
-     name: mongodb
-     state: started
-     enabled: yes
+#   - name: start and enable service
+#     ansible.builtin.service:
+#      name: mongodb
+#      state: started
+#      enabled: yes
+
+
+
+
+- name: Add MongoDB 6.0 repo
+  ansible.builtin.yum_repository:
+    name: mongodb-org-6.0
+    description: MongoDB Repository
+    baseurl: https://repo.mongodb.org/yum/amazon/2/mongodb-org/6.0/x86_64/
+    gpgcheck: yes
+    enabled: yes
+    gpgkey: https://pgp.mongodb.com/server-6.0.asc
+
+- name: Install MongoDB
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: present
+
+- name: Start and enable MongoDB
+  ansible.builtin.service:
+    name: mongod
+    state: started
+    enabled: yes
 
   
