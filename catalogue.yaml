@@ -28,10 +28,10 @@
      state: directory
   
 
-  - name: Download catalogue application
-    ansible.builtin.get_url:
-     url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
-     dest: /temp/catalogue.zip
+  # - name: Download catalogue application
+  #   ansible.builtin.get_url:
+  #    url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+  #    dest: /temp/catalogue.zip
 
 
   - name: extract catalogue application
