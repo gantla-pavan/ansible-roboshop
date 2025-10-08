@@ -28,7 +28,7 @@
 
 
 
-- name: Add MongoDB 6.0 repo
+- name: Add Mongodb 6.0 repo
   ansible.builtin.yum_repository:
     name: mongodb-org-6.0
     description: MongoDB Repository
