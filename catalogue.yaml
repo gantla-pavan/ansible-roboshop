@@ -36,8 +36,10 @@
 
   - name: extract catalogue application
     ansible.builtin.unarchive:
+     remote_src: yes
      src:  /tmp/catalogue.zip
      dest: /app
+     
 
 
 
