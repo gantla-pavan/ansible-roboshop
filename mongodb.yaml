@@ -30,7 +30,7 @@
 
 - name: Add Mongodb 6.0 repo
   ansible.builtin.yum_repository:
-    name: mongodb-org-6.0
+    name: mongodb-org 6.0
     description: MongoDB Repository
     baseurl: https://repo.mongodb.org/yum/amazon/2/mongodb-org/6.0/x86_64/
     gpgcheck: yes
