@@ -60,6 +60,7 @@
     ansible.builtin.copy:
      src: user.service
      dest: /etc/systemd/system/user.service
+     remote_src: yes
      
 
   - name: Copy mongo repo
