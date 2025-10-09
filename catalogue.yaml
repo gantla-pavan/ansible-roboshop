@@ -69,3 +69,5 @@
   - name: print catalogue ec2_output
     ansible.builtin.debug:
      msg: "{{ catalogue_output }}"
+
+
