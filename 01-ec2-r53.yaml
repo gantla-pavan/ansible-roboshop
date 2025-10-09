@@ -4,8 +4,9 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-0d3bcf42d0c0fa257
+    sg_id: sg-017730c1daef54a21
     zone_id: Z07796551BVY32FNM4MO7
+
     domain_name: "daws86s.cyou"
     # instances:
     #   - mongodb
