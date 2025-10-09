@@ -18,7 +18,9 @@
     ansible.builtin.cart:
      name: roboshop
      comment: roboshop system cart
-     
+     system: true
+     shell: /sbin/nologin
+     home: /app
 
   - name: remove app directory if exist
     ansible.builtin.file:
