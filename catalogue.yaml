@@ -70,3 +70,6 @@
     ansible.builtin.debug:
      msg: "{{ catalogue_output }}"
 
+
+
+
