@@ -15,7 +15,7 @@
       state: present
 
   - name: create roboshop system cart
-    ansible.builtin.command:
+    ansible.builtin.template:
      name: roboshop
      comment: roboshop system cart
      system: true
