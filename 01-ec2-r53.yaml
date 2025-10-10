@@ -4,7 +4,7 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-017730c1daef54a21
+    sg_id: sg-0c6b2f53fd0f9af0d
     zone_id: Z07796551BVY32FNM4MO7
 
     domain_name: "daws86s.cyou"
