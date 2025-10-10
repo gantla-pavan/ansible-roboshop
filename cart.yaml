@@ -15,9 +15,10 @@
       state: present
 
   - name: create roboshop system cart
-    ansible.builtin.cart:
+    ansible.builtin.command:
      name: roboshop
      comment: roboshop system cart
+     system: true
      shell: /sbin/nologin
      home: /app
 
