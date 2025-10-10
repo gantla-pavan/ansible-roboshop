@@ -14,13 +14,13 @@
       name: nodejs
       state: present
 
-  - name: create roboshop system cart
-    ansible.builtin.template:
-     name: roboshop
-     comment: roboshop system cart
-     system: true
-     shell: /sbin/nologin
-     home: /app
+  # - name: create roboshop system cart
+  #   ansible.builtin.template:
+  #    name: roboshop
+  #    comment: roboshop system cart
+  #    system: true
+  #    shell: /sbin/nologin
+  #    home: /app
 
   - name: remove app directory if exist
     ansible.builtin.file:
